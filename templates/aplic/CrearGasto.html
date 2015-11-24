@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+<html>
+	<head>
+		<title>Agregar Gasto</title>
+	</head>
+	{% block content %}
+
+	 <H2>Crear Gasto</h2>
+	
+		<form class="form-horizontal" action="" method="post">
+		  <br/>
+         <button class="btn btn-success" type="submit" > Guardar </button>
+         <a  href="/gastos" class="btn btn-default" > Cancelar </a>		
+         <br/><br/>
+            {% csrf_token %}
+		     {{ form.as_p }}		 
+		 </form>
+	
+	{% endblock %}
+</html>

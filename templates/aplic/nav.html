@@ -14,17 +14,22 @@
                         </li>
                        
                         <li>
-                            <a href="/clientes"><i class="fa fa-dashboard fa-fw"></i> Clientes</a>
+                            <a href="/ingresos"><i class="fa fa-dashboard fa-fw"></i> Ingresos</a>
                         </li>
-                         <li>
-                            <a href="/clientes"><i class="fa fa-dashboard fa-fw"></i> Facturas</a>
+
+                        <li>
+                            <a href="/usuarios"><i class="fa fa-dashboard fa-fw"></i> Usuarios</a>
                         </li>
-                        {% if  request.user.is_staff  %}    
+                        
+                        <li>
+                            <a href="/gastos"><i class="fa fa-dashboard fa-fw"></i> Gastos</a>
+                        </li>
+                                                 {% if  request.user.is_staff  %}    
                             <li>
                                 <a href="#"><i class="fa fa-cogs"></i> Admin<span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">
                                      <li>
-                                        <a href="#"><i class="fa fa-cubes"></i> Empresas</a>
+                                        <a href="#"><i class="fa fa-cubes"></i> Reportes</a>
                                     </li>
                                     <li>
                                         <a href="#"><i class="fa fa-cog"></i> Parametros</a>
@@ -41,7 +46,9 @@
                         <li>
                              <a href="/logout">Cerrar Sesión</a>
                         </li>
-                       
+                         <li>
+                           <a href="#"> Usuario: {{user.username}}</a>
+                        </li>
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->

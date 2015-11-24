@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+<html>
+	<head>
+		<title>Listar Ingreso</title>
+	</head>
+	{% block content %}
+	<body>
+	
+	 <H2>Ingresos</h2>
+		<br/>
+		<a  href="/ingresos/crear" class="btn btn-primary" > Nuevo </a>
+		<a  href="/" class="btn btn-default" > Cancelar </a>
+		<br/><br/>
+		<table class="table"><tr class="active">
+		    <th>Id</th>
+		    <th>Descripcion</th>
+		    <th>Fecha</th>
+		    <th>Valor</th>
+		  </tr> 
+		{% for cli in ingresos %}
+		 <tr>
+		   <td>
+		   	<a href="#">{{cli.id}}</a> 
+		   </td>
+		   <td>
+		    {% if cli.descripcionIng  %} 
+		     	{{cli.descripcionIng}}
+		    {% endif %}
+		   </td>
+		   <td>
+		   	{{cli.fecha}}
+		   </td>
+		  <td>
+		   	{{cli.valorIng}}
+		  </td>
+		 </tr>
+		{% endfor %}
+	   </table>
+		</body>
+	{% endblock %}
+</html>

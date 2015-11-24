@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+<html>
+	<head>
+		<title>Listar Usuarios</title>
+	</head>
+	{% block content %}
+	<body>
+	
+	 <H2>Usuarios</h2>
+		<br/>
+		<a  href="/usuarios/crear" class="btn btn-primary" > Nuevo </a>
+		<a  href="/" class="btn btn-default" > Cancelar </a>
+		<br/><br/>
+		<table class="table"><tr class="active">
+		    <th>Id</th>
+		    <th>Nombre Completo </th>
+		    <th>Email</th>
+		  </tr> 
+		{% for cli in usuarios %}
+		 <tr>
+		   <td>
+		   	<a href="#">{{cli.id}}</a> 
+		   </td>
+		   <td>
+		    {% if cli.nombreUsuario  %} 
+		     	{{cli.nombreUsuario}}
+		    {% endif %}
+		    {% if cli.nombres  %} 
+                {{cli.nombres}}  {{cli.apellidos}} 
+            {% endif %}
+		   </td>
+		   <td>
+		   	{{cli.email}}
+		   </td>
+		 </tr>
+		{% endfor %}
+	   </table>
+		</body>
+	{% endblock %}
+</html>

@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+<html>
+	<head>
+		<title>Listar Ingreso</title>
+	</head>
+	{% block content %}
+	<body>
+	
+	 <H2>Gastos</h2>
+		<br/>
+		<a  href="/gastos/crear" class="btn btn-primary" > Nuevo </a>
+		<a  href="/" class="btn btn-default" > Cancelar </a>
+		<br/><br/>
+		<table class="table"><tr class="active">
+		    <th>Id</th>
+		    <th>Descripcion</th>
+		    <th>Fecha</th>
+		    <th>Valor</th>
+		  </tr> 
+		{% for cli in gastos %}
+		 <tr>
+		   <td>
+		   	<a href="#">{{cli.id}}</a> 
+		   </td>
+		   <td>
+		    {% if cli.descripcionGas  %} 
+		     	{{cli.descripcionGas}}
+		    {% endif %}
+		   </td>
+		   <td>
+		   	{{cli.fechaGas}}
+		   </td>
+		  <td>
+		   	{{cli.valorGas}}
+		  </td>
+		 </tr>
+		{% endfor %}
+	   </table>
+		</body>
+	{% endblock %}
+</html>
